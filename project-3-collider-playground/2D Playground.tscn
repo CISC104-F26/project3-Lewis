@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bcd82at6jfhnj"]
+
+[ext_resource type="Script" uid="uid://b4myo21kkqfpq" path="res://character_body_2d.gd" id="1_wgtwo"]
+[ext_resource type="Texture2D" uid="uid://h7m37t1eyu20" path="res://icon.svg" id="2_mwefa"]
+[ext_resource type="Script" uid="uid://cn4jh8bwggg48" path="res://area_2d.gd" id="3_lgrm2"]
+[ext_resource type="Script" uid="uid://bf5imoar4hmav" path="res://area_2d_2.gd" id="4_ldr1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qssos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_57qmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcnqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1u0y"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5s0fj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33x8s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2j2di"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgxnn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_avnxn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[node name="Node2D" type="Node2D" unique_id=1622955585]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1758309109]
+position = Vector2(224, 396)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_wgtwo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1049629956]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_mwefa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1642514358]
+shape = SubResource("RectangleShape2D_qssos")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=8994664]
+position = Vector2(72, 195.99998)
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1910023259]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=341244899]
+scale = Vector2(15, 15)
+mesh = SubResource("QuadMesh_57qmd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=66822216]
+position = Vector2(136, 195.99998)
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2060714998]
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2" unique_id=1255307028]
+scale = Vector2(15, 15)
+mesh = SubResource("BoxMesh_fcnqv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1522182733]
+position = Vector2(256, 195.99998)
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1483884649]
+shape = SubResource("CapsuleShape2D_p1u0y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3" unique_id=449316249]
+scale = Vector2(15, 15)
+mesh = SubResource("CapsuleMesh_5s0fj")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1896792816]
+position = Vector2(445, 195.99998)
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=470632802]
+shape = SubResource("RectangleShape2D_33x8s")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4" unique_id=2108671098]
+scale = Vector2(15, 15)
+mesh = SubResource("BoxMesh_2j2di")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=825717063]
+position = Vector2(539, 195.99998)
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=229812018]
+shape = SubResource("CircleShape2D_wgxnn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D5" unique_id=83861491]
+scale = Vector2(15, 15)
+mesh = SubResource("SphereMesh_avnxn")
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=752640198]
+position = Vector2(583, 639.00006)
+scale = Vector2(6.92, 6.92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" unique_id=108904403]
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Border2" type="StaticBody2D" parent="." unique_id=525456833]
+position = Vector2(583, 0)
+rotation = 3.1415927
+scale = Vector2(6.92, 6.92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border2" unique_id=1973188034]
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Border3" type="StaticBody2D" parent="." unique_id=1014758715]
+position = Vector2(-1.1439738e-12, 322)
+rotation = 1.5707964
+scale = Vector2(6.92, 6.92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border3" unique_id=252235610]
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Border4" type="StaticBody2D" parent="." unique_id=1781448497]
+position = Vector2(1160, 322)
+rotation = -1.5707964
+scale = Vector2(6.92, 6.92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border4" unique_id=1770664168]
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2088436227]
+script = ExtResource("3_lgrm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=227811229]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=451290084]
+position = Vector2(409, 583)
+script = ExtResource("4_ldr1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1050816676]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Player" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Player" method="_on_area_2d_2_body_exited"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
