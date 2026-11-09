@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://be0fpcjrsrt4c"]
+
+[ext_resource type="Script" uid="uid://fn45d0bhqhek" path="res://color_changer.gd" id="1_lsbtj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7md5d"]
+bounce = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26jc1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="ColorChanger" type="RigidBody3D" unique_id=313660076]
+physics_material_override = SubResource("PhysicsMaterial_7md5d")
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_lsbtj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1922048035]
+mesh = SubResource("BoxMesh_yf5fn")
+surface_material_override/0 = SubResource("StandardMaterial3D_26jc1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=596754856]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

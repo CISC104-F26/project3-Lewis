@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bnqfukt2ul7wn"]
+
+[ext_resource type="Script" uid="uid://clfavt0d0wbx2" path="res://shrinking_ball.gd" id="1_inv8v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_57qmd"]
+bounce = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_yf5fn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+
+[node name="ShrinkingBall" type="RigidBody3D" unique_id=1938204808]
+physics_material_override = SubResource("PhysicsMaterial_57qmd")
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_inv8v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=371490963]
+mesh = SubResource("SphereMesh_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=595354484]
+shape = SubResource("SphereShape3D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

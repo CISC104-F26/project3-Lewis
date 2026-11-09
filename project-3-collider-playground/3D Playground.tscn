@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://blrss65f63nhd" path="res://character_body_3d.gd" id="1_0g0h1"]
 [ext_resource type="Script" uid="uid://buegugpoubgg0" path="res://area_3d.gd" id="2_oy2wc"]
 [ext_resource type="Script" uid="uid://h1vvx15iy7c8" path="res://area_3d_2.gd" id="3_yief8"]
+[ext_resource type="PackedScene" uid="uid://bnqfukt2ul7wn" path="res://shrinking_ball.tscn" id="4_yief8"]
+[ext_resource type="PackedScene" uid="uid://be0fpcjrsrt4c" path="res://color_changer.tscn" id="5_7opu3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
@@ -111,6 +113,15 @@ script = ExtResource("3_yief8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=924896123]
 shape = SubResource("BoxShape3D_57qmd")
+
+[node name="ShrinkingBall" parent="." unique_id=1938204808 instance=ExtResource("4_yief8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
+
+[node name="ColorChanger" parent="." unique_id=313660076 instance=ExtResource("5_7opu3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6233377, 5.4438314, -7)
+
+[node name="ColorChanger2" parent="." unique_id=951312237 instance=ExtResource("5_7opu3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4740477, 6.014884, -7)
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
